@@ -1,6 +1,5 @@
 const Vaga = require('../models/vaga');
 
-// Adicionar nova vaga
 exports.criarVaga = async (req, res) => {
   try {
     const vaga = await Vaga.create(req.body);
@@ -10,7 +9,6 @@ exports.criarVaga = async (req, res) => {
   }
 };
 
-// Listar todas as vagas (somente títulos)
 exports.listarVagas = async (req, res) => {
   try {
     const vagas = await Vaga.findAll({ attributes: ['titulo'] });
@@ -20,7 +18,6 @@ exports.listarVagas = async (req, res) => {
   }
 };
 
-// Buscar vaga por ID
 exports.buscarVagaPorId = async (req, res) => {
   try {
     const vaga = await Vaga.findByPk(req.params.id);
@@ -33,7 +30,6 @@ exports.buscarVagaPorId = async (req, res) => {
   }
 };
 
-// Atualizar vaga por ID
 exports.atualizarVaga = async (req, res) => {
   try {
     const vaga = await Vaga.findByPk(req.params.id);
@@ -47,7 +43,6 @@ exports.atualizarVaga = async (req, res) => {
   }
 };
 
-// Deletar vaga por ID
 exports.deletarVaga = async (req, res) => {
   try {
     const vaga = await Vaga.findByPk(req.params.id);
